@@ -4,13 +4,11 @@ spring:
 ---
 server:
   port: 8201
-# springµÄÅäÖÃ
 spring:
   profiles: dev
   application:
     name: springcloud-provider-dept
 
-# EurekaµÄÅäÖÃ
 eureka:
   client:
     service-url:
@@ -18,13 +16,11 @@ eureka:
 ---
 server:
   port: 8202
-# springµÄÅäÖÃ
 spring:
   profiles: test
   application:
     name: springcloud-provider-dept
 
-# EurekaµÄÅäÖÃ
 eureka:
   client:
     service-url:
