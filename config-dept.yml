@@ -1,0 +1,64 @@
+spring:
+  profiles: 
+    active: dev
+---
+server:
+  port: 8081
+
+mybatis:
+  type-aliases-package: nuc.ss.springcloud.pojo
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+spring:
+  profiles: dev
+  application:
+    name: springcloud-config-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/db01?characterEncoding=utf-8&useUnicode=true
+    username: root
+    password: admin
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: springcloud-provider-dept-8081
+
+info:
+  app.name: lzh-springcloud
+  company.name: com.lzh
+
+---
+server:
+  port: 8081
+
+mybatis:
+  type-aliases-package: nuc.ss.springcloud.pojo
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+spring:
+  profiles: test
+  application:
+    name: springcloud-config-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/db02?characterEncoding=utf-8&useUnicode=true
+    username: root
+    password: admin
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: springcloud-provider-dept-8081
+
+info:
+  app.name: lzh-springcloud
+  company.name: com.lzh
