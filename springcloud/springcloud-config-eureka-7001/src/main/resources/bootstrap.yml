@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: config-eureka # 仓库中的配置文件名称
+      label: main
+      profile: dev
+      uri: http://localhost:3344
